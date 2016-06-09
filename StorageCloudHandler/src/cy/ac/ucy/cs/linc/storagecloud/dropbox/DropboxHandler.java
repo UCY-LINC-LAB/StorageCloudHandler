@@ -267,7 +267,7 @@ public class DropboxHandler implements ICloudStorageHandler  {
 		
 		PathLinkMetadata file=null;
 		try {
-			file = client.sharing.createSharedLink("/lol");
+			file = client.sharing.createSharedLink(pathFile);
 		} catch (CreateSharedLinkException e) {
 			throw new ExceptionHandler(shareURlError,e);
 		} catch (DbxException e) {

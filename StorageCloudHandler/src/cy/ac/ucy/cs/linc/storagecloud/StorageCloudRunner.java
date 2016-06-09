@@ -28,15 +28,15 @@ public class StorageCloudRunner {
 		ICloudStorageHandler handler = new DropboxHandler();
 		handler.cloudStorageHandlerinit(params);
 		
-		String s1="C:\\Users\\panos\\Dropbox\\lol\\xsa.txt";
+		String s1="C:\\Users\\panos\\Dropbox\\lol\\xsa.txt\\test.java";
 		String s2="C:\\Users\\panos\\Dropbox\\epl435_Team_8.zip";
 		
-		String s3="C:\\Users\\panos\\workspace\\lol\\src\\package1\\da\\xxx.java";
+		String s3="C:\\Users\\panos\\workspace\\lol\\src\\package1\\da\\panos.java";
 		
 		String s4="C:\\Users\\panos\\Dropbox\\lol";
 		String s5="C:\\Users\\panos\\Desktop\\New folder";
 		String s6="C:\\Users\\panos\\Dropbox";
-		String s7="C:\\Users\\panos\\Desktop\\lol\\xxx.txt";
+		String s7="C:\\Users\\panos\\Desktop\\lol\\test.java";
 		//handler.addFileToContainer("test.java", s3, s1);
 		//
 		
@@ -50,9 +50,9 @@ public class StorageCloudRunner {
 		
 		//handler.fileMetadata(s1);
 		//
-		handler.HistoryFile(s1);
+		//handler.HistoryFile(s1);
 		
-		//handler.urlShare(s4);
+		handler.urlShare(s2);
 		//handler.CloneFileOrContainer(s1, s7);
 	
 	}

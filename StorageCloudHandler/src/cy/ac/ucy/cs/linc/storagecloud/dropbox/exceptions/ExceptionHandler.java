@@ -2,8 +2,10 @@ package cy.ac.ucy.cs.linc.storagecloud.dropbox.exceptions;
 
 import java.io.IOException;
 
-import com.dropbox.core.DbxException;
-import com.dropbox.core.v2.Files.GetMetadataException;
+import com.dropbox.core.v2.files.GetMetadataErrorException;
+import com.dropbox.core.v2.sharing.CreateSharedLinkError;
+
+
 
 public class ExceptionHandler extends Exception{
 
@@ -22,4 +24,14 @@ public class ExceptionHandler extends Exception{
 	public ExceptionHandler(String message) {
         super(message);
     }
+
+	public ExceptionHandler(String message, GetMetadataErrorException e) {
+		// TODO Auto-generated constructor stub
+		super(message);
+	}
+
+	public ExceptionHandler(String message, CreateSharedLinkError e) {
+		// TODO Auto-generated constructor stub
+		super(message);
+	}
 }

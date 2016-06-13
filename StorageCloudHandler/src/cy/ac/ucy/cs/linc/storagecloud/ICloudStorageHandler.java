@@ -3,6 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.json.JSONObject;
+
 import cy.ac.ucy.cs.linc.storagecloud.dropbox.exceptions.ExceptionHandler;
 
 
@@ -85,7 +87,7 @@ public interface ICloudStorageHandler {
 	 * @ true if success 
 	 */
 	public boolean urlShare(String PathFile)throws ExceptionHandler;
-	
+		
 	
 	/*
 	 * This method Show information for file or Folder on Storage cloud 
@@ -93,17 +95,17 @@ public interface ICloudStorageHandler {
 	 * @ param PathFile - path where the file is
 	 * @ true if success 
 	 */
-	public String fileMetadata(String path) throws ExceptionHandler  ;
+	public JSONObject FileMetadata(String path) throws ExceptionHandler  ;
 	
 	
-
 	/*
 	 * This method Show History for this file on Storage cloud.
 	 * 
 	 * @ param PathFile - path where the file is
 	 * @ true if success 
 	 */
-	public boolean HistoryFile(String pathFile)throws ExceptionHandler;
+	public ArrayList<JSONObject> HistoryFile(String pathFile)throws ExceptionHandler;
+	
 	
 	/*
 	 * This method clone a file or folder from Storage cloud local to pc.
@@ -112,4 +114,41 @@ public interface ICloudStorageHandler {
 	 * @ true if success 
 	 */
 	public boolean CloneFileOrContainer(String pathSrcFile, String pathDestFile) throws ExceptionHandler;
+	
+	/*
+	 * This method return HashMap with AccountInfo
+	 * 
+	 * 
+	 * @ HashMap - with info
+	 */
+	public  HashMap<String,String> AccountInfo() throws ExceptionHandler;
+	
+	
+
+	/*
+	 * This method add to param Arraylist all folders or files that include in the Project
+	 * one step into Project
+	 * 
+	 * @ param list - put all folders or files
+	 * @ param Project - the project path (empty for root)
+	 * @ void 
+	 */
+	public void ListOfFolder(ArrayList<String> list,String Project)throws ExceptionHandler;
+	
+	public boolean ShareProjectWithEmail(String Project, String email)throws ExceptionHandler;
+	
+	/*
+	 * This method add to param Arraylist all folders or files that include in the Project
+	 * 
+	 * @ param list - put all folders or files
+	 * @ param Project - the project path (empty for root)
+	 * @ void 
+	 */
+	public void ListOfAllFile(ArrayList<String> list,String Project)throws ExceptionHandler;
+	
+	
+	public void RestoreHistoryFile(String path, String idcode)throws ExceptionHandler;
+	
+	public String StorageUsersName(String id)throws ExceptionHandler;
+	
 }

@@ -597,13 +597,25 @@ public class DropboxHandler implements ICloudStorageHandler {
 
 	@Override
 	public String StorageUsersName(String id) throws ExceptionHandler {
-		BasicAccount account2;
-		try {
-			account2 =client.users().getAccount(id);
-		} catch (DbxException e) {
-			throw new ExceptionHandler(connentionError, e);
+		
+		if(!id.equals("")){
+			BasicAccount account2;
+			try {
+				account2 =client.users().getAccount(id);
+			} catch (DbxException e) {
+				throw new ExceptionHandler(connentionError, e);
+			}
+			return account2.getName().getDisplayName();
+		}else{
+			FullAccount account = null;
+			try {
+				account = client.users().getCurrentAccount();
+			} catch (DbxException e) {
+				// TODO Auto-generated catch block
+				throw new ExceptionHandler(connentionError, e);
+			}
+			return account.getName().getDisplayName();
 		}
-		return account2.getName().getDisplayName();
 	}
 
 }

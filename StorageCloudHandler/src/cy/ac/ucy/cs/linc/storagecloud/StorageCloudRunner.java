@@ -32,7 +32,7 @@ public class StorageCloudRunner {
 		ICloudStorageHandler handler = new DropboxHandler();
 		handler.cloudStorageHandlerinit(params);
 
-		String s1 = "/dddd/src/package1/Test.java";
+		String s1 = "/MyProject";
 		String s2 = "C:\\Users\\panos\\workspace\\lol\\src\\package1\\da\\panos.java";
 		String s3 = "C:\\Users\\panos\\Desktop\\panos.java";
 
@@ -46,7 +46,7 @@ public class StorageCloudRunner {
 
 		// handler.deleteFileOrDicertoryFromContainer(s1); //correct
 
-		System.out.println(handler.FileMetadata(s1).toString()); //correct
+		//System.out.println(handler.FileMetadata(s1).toString()); //correct
 
 		// ArrayList<JSONObject> temp;
 		// temp=handler.HistoryFile(s1); //correct
@@ -59,12 +59,12 @@ public class StorageCloudRunner {
 
 		// handler.CloneFileOrContainer(s1, s3);//correct
 
-		// ArrayList<String> l = new ArrayList<String>();
-		// String Project = "";
-		// handler.ListOfFolder(l, Project);// correct
-		// for (int i = 0; i < l.size(); i++) {
-		// System.out.println(l.get(i));
-		// }
+//		 ArrayList<String> l = new ArrayList<String>();
+//		 String Project = "/MyProject";
+//		 handler.ListOfFolder(l, Project);// correct
+//		 for (int i = 0; i < l.size(); i++) {
+//		 System.out.println(l.get(i));
+//		 }
 
 		// HashMap<String,String> info =handler.AccountInfo();//correct
 		//
@@ -76,13 +76,13 @@ public class StorageCloudRunner {
 		//
 		//handler.ShareProjectWithEmail(s1, "dtrihinas@hotmail.com");//correct
 
-//		ArrayList<String> l = new ArrayList<String>();
-//
-//		handler.ListOfAllFile(l, s1);// correct
-//
-//		for (int i = 0; i < l.size(); i++) {
-//			System.out.println(l.get(i));
-//		}
+		ArrayList<String> l = new ArrayList<String>();
+
+		handler.ListOfAllFile(l, s1);// correct
+
+		for (int i = 0; i < l.size(); i++) {
+			System.out.println(l.get(i));
+		}
 		
 //		String id="dbid:AACSiyEOnJM6tAqqmHBebEc8WmghIkNO6sg";
 //		System.out.print(handler.StorageUsersName(id));

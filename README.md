@@ -1,6 +1,10 @@
 StorageCloudHandler
 ===================
-TBD
+Storage cloud handling API developed in java with implementation for dropbox
+
+Functionality
+-------------
+see [here](https://github.com/UCY-LINC-LAB/StorageCloudHandler/blob/master/StorageCloudHandler/src/cy/ac/ucy/cs/linc/storagecloud/ICloudStorageHandler.java)
 
 Contributors
 ------------

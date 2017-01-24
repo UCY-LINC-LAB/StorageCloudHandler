@@ -1,4 +1,4 @@
-StorageCloudHandler
+Storage Cloud Handler
 ===================
 Storage cloud handling API developed in java with implementation for dropbox
 
